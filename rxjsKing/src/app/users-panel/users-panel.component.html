@@ -1,0 +1,9 @@
+<div style="border: 1px red solid">
+ <div *ngIf="users$ | async as users">
+<div *ngFor="let user of users" style="padding: 10px;">
+    <button style="border: 1px solid green; padding: 2px;" (click)="userClicked(user.id)">{{user.id}}</button>
+</div>
+<div *ngIf="selectedUserSignal()">
+    <span>{{selectedUserSignal() | json}}</span>
+</div>
+</div>
